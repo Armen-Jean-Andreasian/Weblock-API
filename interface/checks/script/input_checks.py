@@ -1,3 +1,10 @@
+"""
+Contains necessary input checks:
+    - input injection check
+    - null value check
+    - weak password check
+"""
+
 import input_armor  # pip install input_armor
 
 

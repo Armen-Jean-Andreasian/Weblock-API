@@ -1,11 +1,11 @@
-from interface.input_checks import InputValidator, InjectionChecker
+from interface.checks.script.input_checks import InputValidator, InjectionChecker
 
 
 def main(username, password):
-    c = InputValidator(username=username, password=password)
-    p_check = InjectionChecker(c)
+    validator = InputValidator(username=username, password=password)
+    injection_check = InjectionChecker(validator)
 
-    return p_check.detect_malicious()
+    return injection_check.detect_malicious()
 
 
 assert 'Error' in main(username="'", password='123')

@@ -1,11 +1,11 @@
-from interface.input_checks import InputValidator, NullChecker
+from interface.checks.script.input_checks import InputValidator, NullChecker
 
 
 def main(username, password):
-    c = InputValidator(username=username, password=password)
-    p_check = NullChecker(c)
+    validator = InputValidator(username=username, password=password)
+    null_check = NullChecker(validator)
 
-    return p_check.detect_null()
+    return null_check.detect_null()
 
 
 assert main(username="", password='123') == {'Error': "Empty username field!"}

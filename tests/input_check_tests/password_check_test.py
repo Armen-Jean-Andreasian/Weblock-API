@@ -1,11 +1,11 @@
-from interface.input_checks import InputValidator, PasswordChecker
+from interface.checks.script.input_checks import InputValidator, PasswordChecker
 
 
 def main(username, password):
-    c = InputValidator(username=username, password=password)
-    p_check = PasswordChecker(c)
+    validator = InputValidator(username=username, password=password)
+    password_check = PasswordChecker(validator)
 
-    return p_check.validate_password_strength()
+    return password_check.validate_password_strength()
 
 
 assert main(username="abc", password='123') == {'Error': 'Weak password!'}
