@@ -1,0 +1,22 @@
+API
+    backend/
+        confidential/
+            encryptor.py
+        database/
+            db_scripts/
+                db_connect.py
+                user_login.py
+                user_register.py
+            database.db
+        requests_handler.py
+    definitions
+        new_user.py
+        user_login.py
+    interface
+        before_proceeding/
+            log_in_check.py
+            registration_check.py
+        input_checks.py
+    misc
+        project_structure
+    RUN_interface.py
