@@ -23,17 +23,3 @@ class LogInCheckMain:
             return null_check_result
 
         return {'username': self.username, 'password': self.password}
-
-
-if __name__ == '__main__':
-    l1 = LogInCheckMain(username="abc", password='123')
-    print(l1.run_check())
-
-    l2 = LogInCheckMain(username='True', password='')
-    print(l2.run_check())
-
-    l3 = LogInCheckMain(username='', password='')
-    print(l3.run_check())
-
-    l4 = LogInCheckMain(username='ABCsadsad', password='Avnkasd202')
-    print(l4.run_check())

@@ -29,4 +29,3 @@ class RegisterCheckMain:
             return password_check_result
 
         return {'username': self.username, 'password': self.password}
-
