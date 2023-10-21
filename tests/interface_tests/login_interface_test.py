@@ -1,8 +1,8 @@
-from API.interface.user_log_in_interface import LogIn
+from API.interface.user_log_in_interface import ExistingUserLogIn
 
 
 def main(username, password):
-    log_in_check = LogIn(username=username, password=password)
+    log_in_check = ExistingUserLogIn(username=username, password=password)
 
     return log_in_check.main()
 

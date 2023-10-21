@@ -113,9 +113,3 @@ class NewUserRegistration(metaclass=NewUserMetaclass):
         elif "Success" in username_availability:
             return self.register_user()
             # return jsonify(self.register_user()), 200
-
-
-if __name__ == '__main__':
-    nu = NewUserRegistration(username='hardy_21', password='asdsadasd')
-    print(nu.main())
-

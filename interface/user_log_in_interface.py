@@ -8,7 +8,7 @@ from API.backend.checks.log_in_check_logic import LogInCheckMain
 from API.backend.confidential.encryption import Encryptor
 
 
-class LogIn(metaclass=LogInMetaclass):
+class ExistingUserLogIn(metaclass=LogInMetaclass):
     """
     This class is designed to handle user authentication by verifying user credentials against a database.
     """
