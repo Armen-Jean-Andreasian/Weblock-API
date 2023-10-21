@@ -36,7 +36,7 @@ class InjectionChecker:
             return {'Error:': password[False]}
 
         else:
-            return {}  # correct password
+            return {}  # correct __password
 
 
 class NullChecker:
@@ -48,7 +48,7 @@ class NullChecker:
         """
         Checks for empty input
 
-        Returns: {'Error': "Empty username field!"} or {'Error': "Empty password field!"} or {}
+        Returns: {'Error': "Empty username field!"} or {'Error': "Empty __password field!"} or {}
         """
         if len(self.username) == 0:
             return {'Error': "Empty username field!"}
@@ -58,6 +58,23 @@ class NullChecker:
 
         else:
             return {}  # non-null
+
+
+class DuplicatingCredentials:
+    def __init__(self, validator_obj: InputValidator):
+        self.username = validator_obj.username.strip().lower()
+        self.password = validator_obj.password.strip().lower()
+
+    def login_password_match(self) -> dict:
+        """
+        checks if username and password match.
+
+        Returns: {'Error': "Matching username and password!"} or {}
+        """
+        if self.username == self.password:
+            return {'Error': "Matching username and password!"}
+        else:
+            return {}
 
 
 class PasswordChecker:

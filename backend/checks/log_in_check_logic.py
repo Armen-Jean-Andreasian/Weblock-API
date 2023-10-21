@@ -1,4 +1,4 @@
-from interface.checks.script.input_checks import InputValidator, InjectionChecker, NullChecker
+from API.backend.checks.script.input_checks import InputValidator, InjectionChecker, NullChecker
 
 
 class LogInCheckMain:
@@ -9,6 +9,12 @@ class LogInCheckMain:
         self.validator = InputValidator(username=self.username, password=self.password)
 
     def run_check(self) -> dict:
+        """
+        Returns:
+            1. { 'username': 'abc', '__password': '123'}
+            2. {'Error': 'Error message'}
+                    example: {'Error': 'Empty username field!'}
+        """
 
         injection_checker = InjectionChecker(validator_obj=self.validator)
         injection_check_result = injection_checker.detect_malicious()
@@ -22,4 +28,4 @@ class LogInCheckMain:
         if 'Error' in null_check_result:
             return null_check_result
 
-        return {'username': self.username, 'password': self.password}
+        return {'username': self.username, '__password': self.password}

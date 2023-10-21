@@ -1,4 +1,4 @@
-from interface.checks.log_in_check_logic import LogInCheckMain
+from API.backend.checks.log_in_check_logic import LogInCheckMain
 
 
 def main(username, password):
@@ -7,7 +7,7 @@ def main(username, password):
     return log_in_check.run_check()
 
 
-assert main(username="abc", password='123') == {'username': 'abc', 'password': '123'}
+assert main(username="abc", password='123') == {'username': 'abc', '__password': '123'}
 assert main(username='True', password='') == {'Error': 'Using true is disallowed.'}
 assert main(username='', password='') == {'Error': 'Empty username field!'}
-assert main(username='ABCsadsad', password='Avnkasd202') == {'username': 'ABCsadsad', 'password': 'Avnkasd202'}
+assert main(username='ABCsadsad', password='Avnkasd202') == {'username': 'ABCsadsad', '__password': 'Avnkasd202'}

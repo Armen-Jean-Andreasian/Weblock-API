@@ -1,4 +1,4 @@
-from interface.checks.script.input_checks import InputValidator, InjectionChecker
+from API.backend.checks.script.input_checks import InputValidator, InjectionChecker
 
 
 def main(username, password):
